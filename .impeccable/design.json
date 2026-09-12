@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12T08:09:51Z",
+  "title": "Design System: SalesPulse",
+  "extensions": {
+    "colorMeta": {
+      "pulse-emerald": { "role": "primary", "displayName": "Pulse Emerald", "canonical": "#0F7A4D" },
+      "pulse-emerald-deep": { "role": "primary-hover", "displayName": "Pulse Emerald Deep", "canonical": "#0C6540" },
+      "ink": { "role": "neutral-text", "displayName": "Ink", "canonical": "#14161A" },
+      "muted-600": { "role": "neutral-text-secondary", "displayName": "Muted 600", "canonical": "#4B5563" },
+      "muted-500": { "role": "neutral-text-tertiary", "displayName": "Muted 500", "canonical": "#6B7280" },
+      "page-bg": { "role": "neutral-bg", "displayName": "Page", "canonical": "#FAFAF9" },
+      "surface": { "role": "neutral-surface", "displayName": "Surface", "canonical": "#FFFFFF" },
+      "error": { "role": "error", "displayName": "Error Red", "canonical": "#D92D20" },
+      "chart-blue": { "role": "categorical-1", "displayName": "Chart Blue", "canonical": "#2a78d6" },
+      "chart-orange": { "role": "categorical-2", "displayName": "Chart Orange", "canonical": "#eb6834" },
+      "chart-aqua": { "role": "categorical-3", "displayName": "Chart Aqua", "canonical": "#1baf7a" },
+      "chart-yellow": { "role": "categorical-4", "displayName": "Chart Yellow", "canonical": "#eda100" },
+      "success-bg": { "role": "success-bg", "displayName": "Success Bg", "canonical": "#F3FBF7" },
+      "success-border": { "role": "success-border", "displayName": "Success Border", "canonical": "#A7E3C5" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The single hero headline only." },
+      "stat-value": { "displayName": "Stat Value", "purpose": "KPI card values - four equally-weighted, none styled as a hero figure." },
+      "body": { "displayName": "Body", "purpose": "Subtext and explanatory copy, max ~42ch." },
+      "body-sm": { "displayName": "Body Small", "purpose": "Compact readable prose inside a card - currently only the Insights Panel's observation sentences." },
+      "label": { "displayName": "Label", "purpose": "Buttons, zone titles, captions, chart-card titles." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "state-transition", "value": "0.15s-0.18s ease", "purpose": "Border/background color transitions on upload-zone and button state changes." },
+      { "name": "spinner-spin", "value": "0.8s linear infinite", "purpose": "Upload-zone parsing spinner rotation." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "480px" },
+      { "name": "md", "value": "640px" },
+      { "name": "lg", "value": "860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call-to-action, e.g. \"Try with sample data\".",
+      "html": "<button class=\"ds-btn-primary\">Try with sample data</button>",
+      "css": ".ds-btn-primary { background: #0F7A4D; color: #FFFFFF; font-size: 15px; font-weight: 600; padding: 13px 24px; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.15s ease, transform 0.08s ease; } .ds-btn-primary:hover { background: #0C6540; } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid #0C6540; outline-offset: 3px; }"
+    },
+    {
+      "name": "Upload Zone (idle)",
+      "kind": "custom",
+      "refersTo": "upload-zone",
+      "description": "Signature drag-and-drop CSV target; flat card with dashed border at rest.",
+      "html": "<div class=\"ds-upload-zone\" role=\"button\" tabindex=\"0\"><svg class=\"ds-zone-icon\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M12 15V4M8 8l4-4 4 4\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M5 15v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><p class=\"ds-zone-title\">Drag your orders CSV here</p><p class=\"ds-zone-subtitle\">or click to browse your files</p><p class=\"ds-zone-hint\">Exported from Shopify, WooCommerce, or your own spreadsheet</p></div>",
+      "css": ".ds-upload-zone { min-height: 260px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 1.5px dashed #D3D6DC; border-radius: 14px; background: #FFFFFF; cursor: pointer; transition: border-color 0.18s ease, background-color 0.18s ease; } .ds-upload-zone:hover { border-color: #0F7A4D; background: #F3FBF7; } .ds-upload-zone:focus-visible { outline: 2px solid #0F7A4D; outline-offset: 3px; } .ds-zone-icon { width: 34px; height: 34px; color: #6B7280; } .ds-zone-title { font-size: 15px; font-weight: 600; color: #14161A; } .ds-zone-subtitle { font-size: 13.5px; color: #6B7280; } .ds-zone-hint { font-size: 12.5px; color: #6B7280; }"
+    },
+    {
+      "name": "Brand Mark",
+      "kind": "custom",
+      "refersTo": "brand-mark",
+      "description": "Pulse-line logo glyph, doubles as a preview of the product's line-chart shape.",
+      "html": "<svg class=\"ds-brand-mark\" viewBox=\"0 0 34 34\" fill=\"none\"><rect width=\"34\" height=\"34\" rx=\"8\" fill=\"#0F7A4D\"/><path d=\"M7 18h4l2.5-7L18 24l2.5-10 2 4H27\" stroke=\"#FFFFFF\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "css": ".ds-brand-mark { width: 34px; height: 34px; flex-shrink: 0; }"
+    },
+    {
+      "name": "KPI Card",
+      "kind": "custom",
+      "refersTo": "kpi-card",
+      "description": "Stat tile: label + value + optional signed-percent trend with a colored arrow.",
+      "html": "<div class=\"ds-kpi-card\"><p class=\"ds-kpi-label\">Total revenue</p><p class=\"ds-kpi-value\">$284.5K</p></div>",
+      "css": ".ds-kpi-card { background: #FFFFFF; border: 1px solid #E4E6EA; border-radius: 14px; padding: 20px 22px; } .ds-kpi-label { font-size: 13.5px; color: #6B7280; margin: 0; } .ds-kpi-value { font-size: 28px; font-weight: 700; color: #14161A; letter-spacing: -0.01em; margin: 0; font-variant-numeric: proportional-nums; }"
+    },
+    {
+      "name": "Chart Card",
+      "kind": "card",
+      "refersTo": "chart-card",
+      "description": "Shared container for every Recharts chart - title, optional subtitle, flat white surface.",
+      "html": "<div class=\"ds-chart-card\"><h3 class=\"ds-chart-title\">Revenue trend</h3><p class=\"ds-chart-subtitle\">Monthly revenue</p></div>",
+      "css": ".ds-chart-card { background: #FFFFFF; border: 1px solid #E4E6EA; border-radius: 14px; padding: 24px; } .ds-chart-title { font-size: 15px; font-weight: 600; color: #14161A; margin: 0; } .ds-chart-subtitle { font-size: 13px; color: #6B7280; margin: 2px 0 0; }"
+    },
+    {
+      "name": "Insights Panel",
+      "kind": "custom",
+      "refersTo": "insights-panel",
+      "description": "Rule-based, client-side-only business observations in a tinted highlight card - the one card allowed off plain white.",
+      "html": "<div class=\"ds-insights-panel\"><h3 class=\"ds-insights-title\">What this means for your business</h3><ul class=\"ds-insights-list\"><li class=\"ds-insights-item\">Revenue has climbed for 5 straight months, through Dec.</li></ul></div>",
+      "css": ".ds-insights-panel { background: #F3FBF7; border: 1px solid #A7E3C5; border-radius: 14px; padding: 24px; } .ds-insights-title { font-size: 15px; font-weight: 600; color: #14161A; margin: 0 0 14px; } .ds-insights-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; } .ds-insights-item { font-size: 14.5px; line-height: 1.55; color: #14161A; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Instrument Panel",
+    "overview": "SalesPulse is built for a small business owner with zero technical background, so the system reads like a single well-made instrument rather than a marketing site: one flat surface, one accent color, no chrome that has to be learned. It borrows its restraint from Linear and Stripe's calmer surfaces, not their marketing pages: neutral grounds, a single confident accent, and generous, deliberate whitespace instead of cards-with-shadows everywhere. The one indulgence is the brand mark itself, a small pulse-line glyph that ties the product name (\"Pulse\") to the literal shape of a sales trend line - now realized in the dashboard's own revenue-trend chart.",
+    "keyCharacteristics": [
+      "Flat by default: borders and tint fills carry state, not drop shadows - KPI cards and chart cards included.",
+      "One decorative accent (deep emerald) used identically everywhere in UI chrome; charts with more than one series use a separate validated categorical palette, never the brand accent stretched across series.",
+      "System font stack only, no webfont loading, so the app stays fully functional offline.",
+      "Two-tier UI-chrome corner radius (buttons/cards) plus one documented exception: chart marks follow the dataviz skill's fixed 4px mark spec."
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Pulse Emerald is the only brand color for UI chrome. It never competes with a second decorative hue there; when a second color appears (error red), it signals a real state, not a stylistic choice. Multi-series charts are the one functional exception - see Chart Colors.", "section": "colors" },
+      { "name": "The No-Eyebrow Rule", "body": "No uppercase tracked label ever sits above a heading, including chart-card titles. The heading carries its own weight.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces never lift on shadow. If a future component needs to show elevation, prefer a tint or border-weight change before reaching for box-shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Pulse Emerald as the only decorative accent across every future screen; reuse it for positive/up indicators.",
+      "Do keep all containers flat (border + tint, never box-shadow) - KPI cards and chart cards included.",
+      "Do keep the two-tier UI-chrome radius scale (8px buttons/marks, 14px containers); chart marks alone follow the 4px dataviz mark-spec exception.",
+      "Do keep typography to the single system font stack; do not introduce a webfont without revisiting the offline constraint in PRODUCT.md.",
+      "Do use the documented 4-color categorical palette (blue/orange/aqua/yellow, fixed order) for any future multi-series chart; re-run validate_palette.js before adding a 5th color.",
+      "Do pair any WARN-contrast chart color (aqua, yellow) with a visible text label, never color alone.",
+      "Do use a full tinted-background fill (Success Bg + Success Border) as the highlight signal for synthesized content like the Insights Panel."
+    ],
+    "donts": [
+      "Don't add an eyebrow/kicker label above any section heading, including chart-card titles.",
+      "Don't introduce a second decorative UI accent color; reserve red strictly for error/negative-delta states.",
+      "Don't use box-shadow for elevation; use border/tint state changes instead.",
+      "Don't center hero content vertically in the viewport; keep it anchored near the top with generous but capped padding.",
+      "Don't use a donut/pie chart for part-to-whole data; use a stacked bar.",
+      "Don't style more than one KPI value as a hero figure - all four stay equally weighted.",
+      "Don't use a colored border-left/border-right strip as a card highlight; use a tinted fill instead.",
+      "Don't call an external API or LLM for the Insights Panel; keep it rule-based and client-side."
+    ]
+  }
+}

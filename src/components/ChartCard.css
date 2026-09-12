@@ -1,0 +1,26 @@
+.chart-card {
+  background: #FFFFFF;
+  border: 1px solid #E4E6EA;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chart-card-header {
+  margin-bottom: 16px;
+}
+
+.chart-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #14161A;
+  margin: 0;
+}
+
+.chart-card-subtitle {
+  font-size: 13px;
+  color: #6B7280;
+  margin: 2px 0 0;
+}
