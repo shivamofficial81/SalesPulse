@@ -6,7 +6,7 @@ SalesPulse turns a raw orders CSV into a clean, client-ready sales dashboard in 
 
 ## Live demo
 
-[salespulse.example.com](https://salespulse.example.com) *(placeholder — update once deployed)*
+[sales-pulse-weld.vercel.app](https://sales-pulse-weld.vercel.app/)
 
 ## Features
 
